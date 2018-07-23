@@ -42,7 +42,7 @@ self.joins(:classifications).where(classifications: {name: "Sailboat"})
       two = Classification.joins(:boats).where(boats: {name: "Zodiac CZ7"})
       three = Classification.joins(:boats).where(boats: {name: "Sun Tracker Regency 254 XP3"})
 
-    self.joins(:classifications).where(classifications: {name: "Sailboat"})
+    self.joins(:classifications).where(classifications: {name: one.name})
 
 
   end
