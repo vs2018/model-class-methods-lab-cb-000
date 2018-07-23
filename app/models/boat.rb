@@ -38,7 +38,7 @@ self.joins(:classifications).where(classifications: {name: "Sailboat"})
   def self.with_three_classifications
         boats = ["Nacra 17", "Zodiac CZ7", "Sun Tracker Regency 254 XP3"].sort
 
-        Classification.joins(:boats).where(boats: {length: lengthL})
+      one = Classification.joins(:boats).where(boats: {name: "Nacra 17"})
 
    
     self.joins(:classifications).where(classifications: {name: ["Sailboat", "Ketch", "Catamaran"]})
