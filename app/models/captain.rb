@@ -13,7 +13,7 @@ class Captain < ActiveRecord::Base
   
   def self.talented_seafarers
     data = ["Sailboat", "Motorboat"]
-        self.joins(boats: :classifications).where("name IN (?)", data)
+        self.joins(boats: :classifications).where("captains,name IN (?)", data)
 
   end
   
