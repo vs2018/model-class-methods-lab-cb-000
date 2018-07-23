@@ -13,7 +13,7 @@ class Captain < ActiveRecord::Base
   
   def self.talented_seafarers
     data = ["Sailboat", "Motorboat"]
-        self.joins(boats: :classifications).where("classifications.name = ? AND classifications.name = ?", data[0], data[1]).uniq
+        self.joins(boats: :classifications).where("classifications.name = ? AND classifications.name = ?", data[0], data[1])
 
   end
   
