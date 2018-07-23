@@ -12,8 +12,11 @@ class Captain < ActiveRecord::Base
   end
   
   def self.talented_seafarers
-    data = ["Sailboat", "Motorboat"]
-        self.joins(boats: :classifications).where("classifications.name = ? OR classifications.name = ?", data[0], data[1])
+    # data = ["Sailboat", "Motorboat"]
+    #     self.joins(boats: :classifications).where("classifications.name = ? OR classifications.name = ?", data[0], data[1])
+        
+            where("id IN (?)", self.sailors.pluck(:id) & self.motorboat_operators.pluck(:id))
+
 
   end
   
