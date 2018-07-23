@@ -36,6 +36,8 @@ self.joins(:classifications).where(classifications: {name: "Sailboat"})
   end
   
   def self.with_three_classifications
+        boats = ["Nacra 17", "Zodiac CZ7", "Sun Tracker Regency 254 XP3"].sort
+
    
     self.joins(:classifications).where(classifications: {name: ["Sailboat", "Ketch", "Catamaran"]})
 
