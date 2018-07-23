@@ -43,7 +43,7 @@ self.joins(:classifications).where(classifications: {name: "Sailboat"})
       three = Classification.joins(:boats).where(boats: {name: "Sun Tracker Regency 254 XP3"})
       print one.name
    
-    self.joins(:classifications).where(classifications: {name: [one.name, two.name, three.name]})
+    self.joins(:classifications).where(classifications: one, two, three)
 
   end
   
